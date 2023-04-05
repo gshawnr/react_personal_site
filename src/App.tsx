@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Home from "./Home";
 
 function App() {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={`nav ${menuActive ? "nav__menu--active" : ""}`}>
+        <div className="nav__menu" onClick={toggleMenu}>
+          <div className="nav__menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className="nav__menu-items">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">PORTFOLIO</a>
+            <a href="#">CONTACT</a>
+          </div>
+        </div>
+      </div>
+      <Home />
     </div>
   );
 }
