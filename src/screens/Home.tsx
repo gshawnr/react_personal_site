@@ -1,6 +1,7 @@
 import PersonIcon from "@mui/icons-material/Person";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 
+import BasicModal from "../components/Modal";
 import profileImage from "../assets/images/person.jpg";
 
 import "./Home.css";
@@ -20,15 +21,7 @@ const Home = () => {
             focused on building beautiful mobile and web applications using
             React and React Native
           </p>
-          <div className="home__buttons">
-            <button className="home__button home--left">
-              <PersonIcon fontSize="small" />
-              ABOUT ME
-            </button>
-            <button className="home__button home--right">
-              <ClearAllIcon fontSize="small" /> PORTFOLIO
-            </button>
-          </div>
+          <BasicModal />
         </div>
       </div>
     </div>

@@ -55,10 +55,12 @@
   font-weight: bold;
   padding: 14px 5px;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .nav__menu-items a:hover {
   color: #0b2447;
+  text-decoration: underline;
 }
 
 .nav__menu--active .nav__menu-icon span:nth-child(1) {

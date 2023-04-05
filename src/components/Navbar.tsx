@@ -16,7 +16,6 @@ const Navbar = () => {
       </nav>
       <div className="nav__menu-items">
         <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
         <a href="#">PORTFOLIO</a>
         <a href="#">CONTACT</a>
       </div>
