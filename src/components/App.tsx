@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import Home from "./Home";
+import Home from "../screens/Home";
+import Navbar from "./Navbar";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
@@ -18,12 +19,7 @@ function App() {
             <span></span>
             <span></span>
           </div>
-          <div className="nav__menu-items">
-            <a href="#">HOME</a>
-            <a href="#">ABOUT</a>
-            <a href="#">PORTFOLIO</a>
-            <a href="#">CONTACT</a>
-          </div>
+          <Navbar />
         </div>
       </div>
       <Home />

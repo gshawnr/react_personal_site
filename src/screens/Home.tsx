@@ -1,17 +1,13 @@
-import React from "react";
-import { IconButton } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 
-import Navbar from "./Navbar";
-import profileImage from "./person.jpg";
+import profileImage from "../assets/images/person.jpg";
 
 import "./Home.css";
 
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
       <div className="home__main">
         <div className="image__container">
           <img className="home__image" src={profileImage} alt="" />
@@ -25,10 +21,11 @@ const Home = () => {
             React and React Native
           </p>
           <div className="home__buttons">
-            <button className="home__button content__button--left">
-              <PersonIcon fontSize="small" /> ABOUT ME
+            <button className="home__button home--left">
+              <PersonIcon fontSize="small" />
+              ABOUT ME
             </button>
-            <button className="home__button content__button--right">
+            <button className="home__button home--right">
               <ClearAllIcon fontSize="small" /> PORTFOLIO
             </button>
           </div>

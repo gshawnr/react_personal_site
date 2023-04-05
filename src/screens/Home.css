@@ -1,8 +1,7 @@
 .home {
   height: calc(100vh - 80px);
-  background-color: #000;
   display: flex;
-  justify-home: center;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 }
@@ -12,31 +11,17 @@
   padding: 0 15%;
 }
 
-.home__inner {
-  display: flex;
-  flex-direction: row;
-  justify-home: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
-
 .home__text {
   flex: 1;
   color: #fff;
   text-align: center;
   padding: 0 2%;
-  /* margin-right: 20px; */
   font-size: 36px;
-  /* margin: 5%; */
 }
 
 .home__text h1 {
   font-size: 48px;
   margin: 0;
-}
-
-.home__text h2 {
 }
 
 .home__text p {
@@ -46,7 +31,7 @@
 
 .home__buttons {
   display: flex;
-  justify-home: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -54,59 +39,45 @@
   padding: 10px 20px;
   font-size: 22px;
   font-weight: bold;
-  /* text-transform: uppercase; */
   border: none;
-  /* border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%; */
   border-radius: 50%;
-  /* color: #fff; */
   margin: 0 5%;
   cursor: pointer;
-  /* transition: all 0.3s ease; */
+  white-space: nowrap;
 }
 
-.home__button--left {
+.home__button.home--left {
   display: inline-flex;
   align-items: center;
-  background-color: red;
-
-  color: #fff;
+  background-color: #fcffe7;
+  color: #0b2447;
 }
 
-.home__button--right {
+.home__button.home--left:hover {
+  background-color: #0b2447;
+  color: #fcffe7;
+}
+
+.home__button.home--right {
   display: inline-flex;
   align-items: center;
-  color: red;
+  color: #fcffe7;
+  background-color: #0b2447;
 }
 
-.home__button--about {
-  background-color: #ff5757;
-}
-
-.home__button--about i {
-  margin-right: 10px;
-}
-
-.home__button--about:hover {
-  background-color: #fff;
-  color: #ff5757;
-}
-
-.home__button--portfolio {
+.home__button.home--right {
   background-color: #ffbe57;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   margin-left: -2px;
 }
 
-.home__button--portfolio:hover {
-  background-color: #fff;
+.home__button.home--right:hover {
+  background-color: #fcffe7;
   color: #ffbe57;
 }
 
 .home__image {
-  flex: 1;
   border-radius: 50%;
   width: 300px;
   height: 300px;
