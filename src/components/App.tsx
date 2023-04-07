@@ -1,7 +1,12 @@
 import { useState } from "react";
-import "./App.css";
-import Home from "../screens/Home";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+
 import Navbar from "./Navbar";
+import Home from "../screens/Home";
+import Contact from "../screens/Contact";
+import Portfolio from "../screens/Portfolio";
+
+import "./App.css";
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
@@ -12,9 +17,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`nav ${menuActive ? "nav__menu--active" : ""}`}>
-        <div className="nav__menu" onClick={toggleMenu}>
-          <div className="nav__menu-icon">
+      <div className={`app-nav ${menuActive ? "app-nav__menu--active" : ""}`}>
+        <div className="app-nav__menu" onClick={toggleMenu}>
+          <div className="app-nav__menu-icon">
             <span></span>
             <span></span>
             <span></span>
@@ -22,7 +27,11 @@ function App() {
           <Navbar />
         </div>
       </div>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
     </div>
   );
 }

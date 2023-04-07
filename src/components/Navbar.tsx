@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
   return (
     <div>
-      <nav className="navbar">
-        <div className="navbar__hamburger">
-          <div className={`hamburger__line ${open ? "open" : ""}`}></div>
-          <div className={`hamburger__line ${open ? "open" : ""}`}></div>
-          <div className={`hamburger__line ${open ? "open" : ""}`}></div>
-        </div>
-      </nav>
       <div className="nav__menu-items">
-        <a href="#">HOME</a>
-        <a href="#">PORTFOLIO</a>
-        <a href="#">CONTACT</a>
+        <Link to="/">HOME</Link>
+        <Link to="/portfolio">PORTFOLIO</Link>
+        <Link to="/contact">CONTACT</Link>
       </div>
     </div>
   );
