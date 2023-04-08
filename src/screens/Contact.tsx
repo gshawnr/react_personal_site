@@ -18,6 +18,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [modalState, setModalState] = useState(false);
 
   const handleNameChange = (e: InputEvent) => {
     setName(e.target.value);
@@ -42,9 +43,10 @@ const Contact = () => {
       
       REPLY TO: ${email}`;
 
-      await sendMessage(formattedMsg, name);
+      // await sendMessage(formattedMsg, name);
 
       clearInputs();
+      setModalState(true);
     } catch (err) {
       console.log("contact error: handleSubmit err", err);
     }
@@ -126,8 +128,16 @@ const Contact = () => {
           </a>
         </div>
       </div>
+      <Modal
+        modalState={modalState}
+        changeModalState={setModalState}
+        modalTitle={titleText}
+        modalBody={bodyText}
+      />
     </div>
   );
 };
 
+const titleText = "Message Sent";
+const bodyText = "Thank you for reaching out.";
 export default Contact;

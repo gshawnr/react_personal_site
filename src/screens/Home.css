@@ -30,14 +30,29 @@
 }
 
 .home__button {
+  background-color: #0b2447;
+  color: #fcffe7;
   padding: 10px 20px;
-  font-size: 22px;
-  font-weight: bold;
   border: none;
   border-radius: 50%;
   margin: 0 5%;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.home__button_text {
+  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.home__button:hover {
+  background-color: #fcffe7;
+  color: #0b2447;
 }
 
 .home__image {
