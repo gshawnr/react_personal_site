@@ -4,7 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LanguageIcon from "@mui/icons-material/Language";
-import axios from "axios";
+import { sendMessage } from "../apis/aws";
 import Modal from "../components/Modal";
 import "./Contact.css";
 
@@ -31,19 +31,23 @@ const Contact = () => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = () => {
-    const data = { name, email, message };
-    console.log("submitted data", data);
-    clearInputs();
+  const handleSubmit = async () => {
+    try {
+      // TODO add validation
+      const data = { name, email, message };
 
-    // axios
-    //   .post("/send-email", data)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+      // spacing added for message readability
+      const formattedMsg = `
+      ${message} 
+      
+      REPLY TO: ${email}`;
+
+      await sendMessage(formattedMsg, name);
+
+      clearInputs();
+    } catch (err) {
+      console.log("contact error: handleSubmit err", err);
+    }
   };
 
   const clearInputs = () => {
