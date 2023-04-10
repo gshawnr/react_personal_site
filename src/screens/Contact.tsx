@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Button } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LanguageIcon from "@mui/icons-material/Language";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import SendIcon from "@mui/icons-material/Send";
+import { Button, Container, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useState } from "react";
+
 import { sendMessage } from "../apis/aws";
 import Modal from "../components/Modal";
+
 import "./Contact.css";
 
 type InputEvent = {
@@ -16,8 +19,17 @@ type InputEvent = {
 
 const Contact = () => {
   const [name, setName] = useState("");
+  const [nameError, setNameError] = useState(false);
+  const [nameErrorMsg, setNameErrorMsg] = useState("");
+
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+
   const [message, setMessage] = useState("");
+  const [msgError, setMsgError] = useState(false);
+  const [msgErrorMsg, setMsgErrorMsg] = useState("");
+
   const [modalState, setModalState] = useState(false);
 
   const handleNameChange = (e: InputEvent) => {
@@ -34,7 +46,9 @@ const Contact = () => {
 
   const handleSubmit = async () => {
     try {
-      // TODO add validation
+      if (!validateInputs()) {
+        return;
+      }
       const data = { name, email, message };
 
       // spacing added for message readability
@@ -43,7 +57,7 @@ const Contact = () => {
       
       REPLY TO: ${email}`;
 
-      // await sendMessage(formattedMsg, name);
+      await sendMessage(formattedMsg, name);
 
       clearInputs();
       setModalState(true);
@@ -58,83 +72,148 @@ const Contact = () => {
     setMessage("");
   };
 
+  const validateInputs = (): boolean => {
+    let result = true;
+
+    //name regex
+    const nameRegex = /^(?!.*['"])[a-zA-Z0-9\s]+$/gm;
+    if (!nameRegex.test(name)) {
+      setNameError(true);
+      setNameErrorMsg("Name must be provided without some special characters.");
+      result = false;
+    }
+
+    //email regex
+    const emailRegex = /^(?!.*['"])[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/g;
+    if (!emailRegex.test(email)) {
+      setEmailError(true);
+      setEmailErrorMsg("Email is invalid.  Please try again.");
+      result = false;
+    }
+
+    //msg regex
+    const msgRegex = /^(?!.*['"])[a-zA-Z0-9.-_*(),]+$/gm;
+    if (!msgRegex.test(message)) {
+      setMsgError(true);
+      setMsgErrorMsg(
+        "A message must be provide, and some special characters are not allowed.  Please try again."
+      );
+      result = false;
+    }
+
+    return result;
+  };
+
   return (
-    <div className="contact-container">
-      <form className="contact-form">
-        <div className="contact form-control">
-          <label className="contact">Name</label>
-          <input
-            className="contact"
-            name="name"
-            onChange={handleNameChange}
-            required
+    <Container className="contact-container">
+      <Typography className="contact-heading" variant="h3">
+        How Can I Help?
+      </Typography>
+      <Box className="contact-form-control">
+        <Box className="contact-form-group">
+          <TextField
+            autoFocus
+            className="contact-input"
+            error={nameError}
+            fullWidth
+            helperText={nameErrorMsg}
+            label="name"
+            onChange={(e) => {
+              setNameError(false);
+              setNameErrorMsg("");
+              handleNameChange(e);
+            }}
+            required={true}
             type="text"
             value={name}
+            variant="standard"
           />
-        </div>
-        <div className="contact form-control">
-          <label className="contact">Email</label>
-          <input
-            className="contact"
+        </Box>
+        <Box className="contact-form-group">
+          <TextField
+            className="contact-input"
+            error={emailError}
+            fullWidth
+            helperText={emailErrorMsg}
+            label="email"
+            onChange={(e) => {
+              setEmailError(false);
+              setEmailErrorMsg("");
+              handleEmailChange(e);
+            }}
+            required
             type="email"
-            name="email"
             value={email}
-            onChange={handleEmailChange}
+            variant="standard"
           />
-        </div>
-        <div className="contact form-control">
-          <label className="contact" id="message">
-            Message
-          </label>
-          <textarea
-            className="contact"
-            id="message"
-            name="message"
-            rows={12}
+        </Box>
+        <Box className="contact-form-group">
+          <TextField
+            className="contact-input"
+            error={msgError}
+            fullWidth
+            helperText={msgErrorMsg}
+            label="message"
+            multiline
+            onChange={(e) => {
+              setMsgError(false);
+              setMsgErrorMsg("");
+              handleMessageChange(e);
+            }}
+            required
+            rows={8}
             value={message}
-            onChange={handleMessageChange}
+            variant="outlined"
           />
-        </div>
-        <div className="contact send-btn">
+        </Box>
+        <Box
+          className="contact-btn-group"
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
           <Button
+            className="contact-send-btn"
             endIcon={<SendIcon />}
             fullWidth
             sx={{
-              width: "20%",
+              width: "25%",
               backgroundColor: "#0b2447",
               color: "#fcffe7",
             }}
             onClick={handleSubmit}
+            type="submit"
             variant="contained"
           >
             Send
           </Button>
-        </div>
-      </form>
-      <div className="contact-social">
-        <div>
+        </Box>
+      </Box>
+      <Box className="contact-social">
+        <Box>
           <a href="https://github.com/gshawnr">
             <GitHubIcon sx={{ color: "#fff", fontSize: 40 }} />
           </a>
-        </div>
-        <div>
+        </Box>
+        <Box>
           <a href="https://linkedin.com/in/shawn-richardson-3132bbb">
             <LinkedInIcon sx={{ fontSize: 40, color: "#fff" }} />
           </a>
-        </div>
-        <div>
+        </Box>
+        <Box>
           <a href="http://gsrdev.com/">
             <LanguageIcon sx={{ color: "#fff", fontSize: 40 }} />
           </a>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <Modal
         modalState={modalState}
         changeModalState={setModalState}
         modalTitle={titleText}
         modalBody={bodyText}
       />
-    </div>
+    </Container>
   );
 };
 
