@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 
 import { sendMessage } from "../apis/aws";
+import ContactModalContent from "../components/ContactModalContent";
 import Modal from "../components/Modal";
 
 import "./Contact.css";
@@ -21,6 +22,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
   const [nameErrorMsg, setNameErrorMsg] = useState("");
+  const [resMsgName, setResMsgName] = useState("");
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
@@ -57,10 +59,11 @@ const Contact = () => {
       
       REPLY TO: ${email}`;
 
-      await sendMessage(formattedMsg, name);
+      // await sendMessage(formattedMsg, name);
 
-      clearInputs();
+      setResMsgName(name);
       setModalState(true);
+      clearInputs();
     } catch (err) {
       console.log("contact error: handleSubmit err", err);
     }
@@ -92,11 +95,11 @@ const Contact = () => {
     }
 
     //msg regex
-    const msgRegex = /^(?!.*['"])[a-zA-Z0-9.-_*(),]+$/gm;
+    const msgRegex = /^(?!.*['"])[a-zA-Z0-9.-_*(),\\n\s]+$/gm;
     if (!msgRegex.test(message)) {
       setMsgError(true);
       setMsgErrorMsg(
-        "A message must be provide, and some special characters are not allowed.  Please try again."
+        "Message must be provided. Note special characters are restricted (ie \" and ').  Please try again."
       );
       result = false;
     }
@@ -210,13 +213,11 @@ const Contact = () => {
       <Modal
         modalState={modalState}
         changeModalState={setModalState}
-        modalTitle={titleText}
-        modalBody={bodyText}
+        modalBody={<ContactModalContent data={resMsgName} />}
       />
     </Container>
   );
 };
 
-const titleText = "Message Sent";
 const bodyText = "Thank you for reaching out.";
 export default Contact;

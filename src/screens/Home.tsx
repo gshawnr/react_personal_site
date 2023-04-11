@@ -2,6 +2,7 @@ import { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 
 import BasicModal from "../components/Modal";
+import AboutMeContent from "../components/AboutMeContent";
 import profileImage from "../assets/images/person.jpg";
 
 import "./Home.css";
@@ -30,8 +31,7 @@ const Home = () => {
           <BasicModal
             modalState={modalState}
             changeModalState={setModalState}
-            modalTitle="Title"
-            modalBody={bodyText}
+            modalBody={<AboutMeContent />}
           />
         </div>
       </div>

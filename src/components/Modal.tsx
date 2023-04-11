@@ -1,19 +1,16 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Box, Paper } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
 type ModalProps = {
   modalState: boolean;
   changeModalState: (state: boolean) => void;
-  modalTitle: string;
-  modalBody?: string;
+  modalBody?: React.ReactNode;
 };
 
 export default function BasicModal({
   changeModalState,
   modalBody,
   modalState,
-  modalTitle,
 }: ModalProps) {
   return (
     <div>
@@ -24,12 +21,7 @@ export default function BasicModal({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style.modal}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {modalTitle}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {modalBody}
-          </Typography>
+          <Paper elevation={3}>{modalBody}</Paper>
         </Box>
       </Modal>
     </div>
