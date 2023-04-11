@@ -15,11 +15,11 @@ function ContactModalContent({ data }: inputProps) {
       </Typography>
       <Typography className="contact-modal-content-text">
         {" "}
-        Thank you for your message.
+        Thank you for reaching out.
       </Typography>
       <Typography className="contact-modal-content-text">
-        I appreciate you taking the time to reach out to me through my website.
-        I will do my best to get back to you as soon as possible.
+        I appreciate you taking the time to contact me through my website. I
+        will get back to you as soon as possible.
       </Typography>
       <Typography className="contact-modal-content-text">
         Best regards,

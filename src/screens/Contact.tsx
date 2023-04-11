@@ -51,7 +51,6 @@ const Contact = () => {
       if (!validateInputs()) {
         return;
       }
-      const data = { name, email, message };
 
       // spacing added for message readability
       const formattedMsg = `
@@ -59,7 +58,7 @@ const Contact = () => {
       
       REPLY TO: ${email}`;
 
-      // await sendMessage(formattedMsg, name);
+      await sendMessage(formattedMsg, name);
 
       setResMsgName(name);
       setModalState(true);
@@ -82,7 +81,9 @@ const Contact = () => {
     const nameRegex = /^(?!.*['"])[a-zA-Z0-9\s]+$/gm;
     if (!nameRegex.test(name)) {
       setNameError(true);
-      setNameErrorMsg("Name must be provided without some special characters.");
+      setNameErrorMsg(
+        "Name must be provided. Note some special characters are restricted."
+      );
       result = false;
     }
 
@@ -219,5 +220,4 @@ const Contact = () => {
   );
 };
 
-const bodyText = "Thank you for reaching out.";
 export default Contact;
