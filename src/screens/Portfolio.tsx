@@ -1,9 +1,12 @@
 import React from "react";
-
-import "./Portfolio.css";
+import { Container, Typography } from "@mui/material";
 
 function Portfolio() {
-  return <div className="portfolio-container">Portfolio</div>;
+  return (
+    <Container sx={{ height: "100vh" }}>
+      <Typography>Portfolio</Typography>
+    </Container>
+  );
 }
 
 export default Portfolio;

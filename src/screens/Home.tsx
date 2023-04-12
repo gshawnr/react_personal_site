@@ -39,7 +39,4 @@ const Home = () => {
   );
 };
 
-const bodyText =
-  "himenaeos. Curabitur pellentesque iaculis tempor. Sed eget egestas mauris, ed tempor metus. Nam quis lectus id mi cursus semper. Cras eget tempor quam. Phasellus aliquet sed nisl non porttitor. Phasellus dapibus vehicula massa, ac tristique orci ultricies in. Sed finibus velit lacus, eu tincidunt odio vestibulum a. Phasellus metus ex, scelerisque quis lectus sed, tristique gravida justo. \n\n himenaeos. Curabitur pellentesque iaculis tempor. Sed eget egestas mauris, ed tempor metus. Nam quis lectus id mi cursus semper. Cras eget tempor quam. Phasellus aliquet sed nisl non porttitor. Phasellus dapibus vehicula massa, ac tristique orci ultricies in. Sed finibus velit lacus, eu tincidunt odio vestibulum a. Phasellus metus ex, scelerisque quis lectus sed, tristique gravida justo. \n\n himenaeos. Curabitur pellentesque iaculis tempor. Sed eget egestas mauris, ed tempor metus. Nam quis lectus id mi cursus semper. Cras eget tempor quam. Phasellus aliquet sed nisl non porttitor. Phasellus dapibus vehicula massa, ac tristique orci ultricies in. Sed finibus velit lacus, eu tincidunt odio vestibulum a. Phasellus metus ex, scelerisque quis lectus sed, tristique gravida justo. \n\n";
-
 export default Home;
