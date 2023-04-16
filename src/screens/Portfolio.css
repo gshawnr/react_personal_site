@@ -1,0 +1,17 @@
+.portfolio-container {
+  width: 100vw;
+}
+
+.portfolio-carousel-container {
+  display: flex;
+  align-items: center;
+  height: 30%;
+  margin: 5% auto;
+  width: 80%;
+}
+
+.portfolio-image {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+}
