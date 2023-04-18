@@ -11,7 +11,7 @@
 .contact-form-control {
   background-color: white;
   border-radius: 5%;
-  margin: 3% 22%;
+  margin: 3%;
   padding: 5%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .contact-heading {
-  color: white;
+  color: #000;
 }
 
 .contact-social {

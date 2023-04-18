@@ -197,17 +197,17 @@ const Contact = () => {
       <Box className="contact-social">
         <Box>
           <a href="https://github.com/gshawnr">
-            <GitHubIcon sx={{ color: "#fff", fontSize: 40 }} />
+            <GitHubIcon sx={{ color: "#000", fontSize: 40 }} />
           </a>
         </Box>
         <Box>
           <a href="https://linkedin.com/in/shawn-richardson-3132bbb">
-            <LinkedInIcon sx={{ fontSize: 40, color: "#fff" }} />
+            <LinkedInIcon sx={{ fontSize: 40, color: "#000" }} />
           </a>
         </Box>
         <Box>
           <a href="http://gsrdev.com/">
-            <LanguageIcon sx={{ color: "#fff", fontSize: 40 }} />
+            <LanguageIcon sx={{ color: "#000", fontSize: 40 }} />
           </a>
         </Box>
       </Box>

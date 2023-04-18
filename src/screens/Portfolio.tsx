@@ -2,14 +2,17 @@ import React from "react";
 import { Paper, Typography } from "@mui/material";
 import Carousel from "../components/Carousel";
 
-import web from "../assets/images/web.png";
-import web2 from "../assets/images/web2.png";
+import mobImageStrs from "../assets/images/mob_images_export";
+import webImageStrs from "../assets/images/web_images_export";
 
 import "./Portfolio.css";
 
-const imageStrings: string[] = [web, web2, web, web2, web, web2];
-
 function Portfolio() {
+  const mobImages = createImagesArr(mobImageStrs, "portfolio-image-mob");
+  const webImages = createImagesArr(webImageStrs, "portfolio-image-web");
+
+  console.log(mobImages);
+
   return (
     <div className="portfolio-container">
       <Typography variant="h1">Portfolio</Typography>
@@ -18,12 +21,12 @@ function Portfolio() {
         sx={{
           margin: "4% auto",
           padding: "1%",
-          width: "70%",
+          width: "85%",
           borderRadius: "10px",
         }}
       >
         <div className="portfolio-carousel-container">
-          <Carousel>{images}</Carousel>
+          <Carousel>{mobImages}</Carousel>
         </div>
         <Typography variant="h5" sx={{ paddingX: "5%" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eaque
@@ -44,12 +47,12 @@ function Portfolio() {
         sx={{
           margin: "1% auto",
           padding: "1%",
-          width: "70%",
+          width: "85%",
           borderRadius: "10px",
         }}
       >
         <div className="portfolio-carousel-container">
-          <Carousel>{images}</Carousel>
+          <Carousel>{webImages}</Carousel>
         </div>
         <Typography variant="h5" sx={{ paddingX: "5%" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eaque
@@ -69,12 +72,17 @@ function Portfolio() {
   );
 }
 
-const images: React.ReactNode[] = imageStrings.map((image, index) => {
-  return (
-    <div key={index}>
-      <img className="portfolio-image" src={image} />
-    </div>
-  );
-});
+function createImagesArr(
+  imageStrings: string[],
+  classname: string
+): React.ReactNode[] {
+  return imageStrings.map((image, index) => {
+    return (
+      <div key={index}>
+        <img className={classname} src={image} />
+      </div>
+    );
+  });
+}
 
 export default Portfolio;

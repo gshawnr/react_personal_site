@@ -7,11 +7,15 @@
   align-items: center;
   height: 30%;
   margin: 5% auto;
-  width: 80%;
+  width: 100%;
 }
 
-.portfolio-image {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
+.portfolio-image-mob {
+  /* width: 400px; */
+  /* width: 80%; */
+}
+
+.portfolio-image-web {
+  /* width: 95% */
+  width: 100%;
 }

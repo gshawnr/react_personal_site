@@ -13,7 +13,7 @@
 
 .home__text {
   flex: 1;
-  color: #fff;
+  color: #000;
   text-align: center;
   padding: 0 2%;
   font-size: 36px;
@@ -31,7 +31,7 @@
 
 .home__button {
   background-color: #0b2447;
-  color: #fcffe7;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 50%;
@@ -51,7 +51,8 @@
 }
 
 .home__button:hover {
-  background-color: #fcffe7;
+  background-color: #fff;
+  border: solid thin #000;
   color: #0b2447;
 }
 
