@@ -1,6 +1,8 @@
 .CarouselItem {
   flex: 0 0 auto;
-  margin-left: 12rem;
+  width: 99%;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .CarouselContainer {
@@ -24,7 +26,6 @@
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: 100%;
 }
 
 .CarouselContainerInner::-webkit-scrollbar {

@@ -3,19 +3,20 @@
 }
 
 .portfolio-carousel-container {
+  background-color: lightgray;
+  border-radius: 1%;
   display: flex;
   align-items: center;
-  height: 30%;
-  margin: 5% auto;
-  width: 100%;
+  margin: 3% auto;
+  padding: 1%;
+  width: 50%;
 }
 
 .portfolio-image-mob {
-  /* width: 400px; */
-  /* width: 80%; */
+  width: 25%;
 }
 
 .portfolio-image-web {
-  /* width: 95% */
   width: 100%;
+  object-fit: cover;
 }

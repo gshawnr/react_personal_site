@@ -18,8 +18,8 @@ const Carousel = ({ children }: CarouselProps) => {
   const { hasItemsOnLeft, hasItemsOnRight, scrollRight, scrollLeft } =
     usePosition(ref);
 
-  console.log("hasItemsOnLeft", hasItemsOnLeft);
-  console.log("hasItemsOnRight", hasItemsOnRight);
+  console.log("hasleft", hasItemsOnLeft);
+  console.log("hasright", hasItemsOnRight);
 
   return (
     <div className="CarouselContainer" role="region">
