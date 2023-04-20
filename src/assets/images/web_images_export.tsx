@@ -9,13 +9,13 @@ import metrics from "./web_metrics.png";
 import signin from "./web_signin.png";
 
 export default [
-  about,
+  home,
+  signin,
   companies,
   add_company,
-  home,
-  // home_drawer,
-  // home_responsive,
   summary,
   metrics,
-  signin,
+  about,
+  // home_drawer,
+  // home_responsive,
 ];

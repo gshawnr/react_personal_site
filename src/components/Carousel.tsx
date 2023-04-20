@@ -1,10 +1,10 @@
-import React, { useRef, RefObject } from "react";
+import React, { useRef } from "react";
 
-import RightCarouselButton from "./RightCarouselButton";
-import LeftCarouselButton from "./LeftCarouselButton";
+import { usePosition } from "../hooks/usePosition";
 import { ArrowLeft } from "./ArrowLeft";
 import { ArrowRight } from "./ArrowRight";
-import { usePosition } from "../hooks/usePosition";
+import LeftCarouselButton from "./LeftCarouselButton";
+import RightCarouselButton from "./RightCarouselButton";
 
 import "./Carousel.css";
 
@@ -17,9 +17,6 @@ const Carousel = ({ children }: CarouselProps) => {
 
   const { hasItemsOnLeft, hasItemsOnRight, scrollRight, scrollLeft } =
     usePosition(ref);
-
-  console.log("hasleft", hasItemsOnLeft);
-  console.log("hasright", hasItemsOnRight);
 
   return (
     <div className="CarouselContainer" role="region">
