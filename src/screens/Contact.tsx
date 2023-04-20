@@ -2,8 +2,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SendIcon from "@mui/icons-material/Send";
-import { Button, Container, TextField, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
 import { sendMessage } from "../apis/aws";
@@ -17,6 +16,8 @@ type InputEvent = {
     value: string;
   };
 };
+
+const INPUT_FONT_SIZE = "1.4rem";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -96,12 +97,10 @@ const Contact = () => {
     }
 
     //msg regex
-    const msgRegex = /^(?!.*['"])[a-zA-Z0-9.-_*(),\\n\s]+$/gm;
+    const msgRegex = /^.{1,}[a-zA-Z0-9.-_*(),\\n\s]+$/gm;
     if (!msgRegex.test(message)) {
       setMsgError(true);
-      setMsgErrorMsg(
-        "Message must be provided. Note special characters are restricted (ie \" and ').  Please try again."
-      );
+      setMsgErrorMsg("Message must be provided.  Please try again.");
       result = false;
     }
 
@@ -109,18 +108,18 @@ const Contact = () => {
   };
 
   return (
-    <Container className="contact-container">
-      <Typography className="contact-heading" variant="h3">
-        How Can I Help?
-      </Typography>
-      <Box className="contact-form-control">
-        <Box className="contact-form-group">
+    <div className="contact-container">
+      <h1 className="contact-heading">Contact Me</h1>
+      <div className="contact-form-control">
+        <div className="contact-form-group">
           <TextField
             autoFocus
             className="contact-input"
             error={nameError}
             fullWidth
             helperText={nameErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
             label="name"
             onChange={(e) => {
               setNameError(false);
@@ -132,13 +131,15 @@ const Contact = () => {
             value={name}
             variant="standard"
           />
-        </Box>
-        <Box className="contact-form-group">
+        </div>
+        <div className="contact-form-group">
           <TextField
             className="contact-input"
             error={emailError}
             fullWidth
             helperText={emailErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
             label="email"
             onChange={(e) => {
               setEmailError(false);
@@ -150,13 +151,17 @@ const Contact = () => {
             value={email}
             variant="standard"
           />
-        </Box>
-        <Box className="contact-form-group">
+        </div>
+        <div className="contact-form-group">
           <TextField
             className="contact-input"
             error={msgError}
             fullWidth
             helperText={msgErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{
+              style: { fontSize: INPUT_FONT_SIZE },
+            }}
             label="message"
             multiline
             onChange={(e) => {
@@ -165,26 +170,20 @@ const Contact = () => {
               handleMessageChange(e);
             }}
             required
-            rows={8}
+            rows={6}
             value={message}
             variant="outlined"
           />
-        </Box>
-        <Box
-          className="contact-btn-group"
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
+        </div>
+        <div className="contact-btn-group">
           <Button
             className="contact-send-btn"
             endIcon={<SendIcon />}
             fullWidth
             sx={{
-              width: "25%",
-              backgroundColor: "#0b2447",
+              backgroundColor: "#ff6969",
               color: "#fcffe7",
+              width: "35%",
             }}
             onClick={handleSubmit}
             type="submit"
@@ -192,31 +191,31 @@ const Contact = () => {
           >
             Send
           </Button>
-        </Box>
-      </Box>
-      <Box className="contact-social">
-        <Box>
+        </div>
+      </div>
+      <div className="contact-social">
+        <div>
           <a href="https://github.com/gshawnr">
-            <GitHubIcon sx={{ color: "#000", fontSize: 40 }} />
+            <GitHubIcon sx={{ color: "#fff", fontSize: 40 }} />
           </a>
-        </Box>
-        <Box>
+        </div>
+        <div>
           <a href="https://linkedin.com/in/shawn-richardson-3132bbb">
-            <LinkedInIcon sx={{ fontSize: 40, color: "#000" }} />
+            <LinkedInIcon sx={{ fontSize: 40, color: "#fff" }} />
           </a>
-        </Box>
-        <Box>
+        </div>
+        <div>
           <a href="http://gsrdev.com/">
-            <LanguageIcon sx={{ color: "#000", fontSize: 40 }} />
+            <LanguageIcon sx={{ color: "#fff", fontSize: 40 }} />
           </a>
-        </Box>
-      </Box>
+        </div>
+      </div>
       <Modal
         modalState={modalState}
         changeModalState={setModalState}
         modalBody={<ContactModalContent data={resMsgName} />}
       />
-    </Container>
+    </div>
   );
 };
 

@@ -1,6 +1,13 @@
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .portfolio-container {
-  width: 100vw;
+  background-color: #f7d060;
   padding: 0 5%;
+  width: 100vw;
 }
 
 .portfolio-mob-container {
@@ -12,21 +19,18 @@
 
 .portfolio-mob-text-container {
   display: flex;
-  align-items: top;
   justify-content: flex-end;
   margin-right: 2%;
 }
 
 .portfolio-mob-text-container p {
   width: 60%;
-  font-size: 2.25em;
-  line-height: 1.5;
-  text-align: left;
+  margin-top: 0;
 }
 
 .portfolio-mob-carousel {
-  background-color: #f7d060;
-  border-radius: 1%;
+  background-color: #e9a178;
+  border-radius: 2%;
   display: flex;
   margin: 0% auto;
   padding: 4% 1%;
@@ -39,22 +43,15 @@
 
 .portfolio-carousel-web {
   background-color: #cde990;
-  border-radius: 1%;
+  border-radius: 2%;
   display: flex;
   align-items: center;
-  /* margin: 3%;  */
   padding: 4% 1%;
-  width: 65%;
+  width: 70%;
 }
 
 .portfolio-web-text-container {
-  width: 65%;
-}
-
-.portfolio-web-text-container p {
-  font-size: 2.25em;
-  line-height: 1.5;
-  text-align: left;
+  width: 70%;
 }
 
 .portfolio-image-mob {

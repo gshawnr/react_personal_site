@@ -4,7 +4,7 @@ import "./AboutMeContent.css";
 
 function AboutMeContent() {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "#FAF8F1" }}>
       <Box sx={{ textAlign: "center" }}>
         <Typography variant="h3">About Me</Typography>
       </Box>
@@ -19,8 +19,8 @@ function AboutMeContent() {
           engaging and interactive user interfaces. I'm also passionate about
           developing robust, scalable back-end solutions to support these
           applications. In addition to my technical experience, I hold a
-          business degree and a diploma in Software Systems Development from
-          BCIT.
+          business degree from the Richard Ivey School of Business and a
+          Software Systems Developer diploma from BCIT.
         </Typography>
         <Typography className="about-me-content-text">
           I'm always looking for new challenges and opportunities to learn and

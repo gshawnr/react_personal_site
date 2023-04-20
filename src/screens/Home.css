@@ -1,38 +1,36 @@
 .home {
-  height: calc(100vh - 80px);
+  height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 0 20px;
 }
 
 .home__main {
   display: flex;
   padding: 0 15%;
+  margin-top: 8%;
 }
 
 .home__text {
   flex: 1;
-  color: #000;
-  text-align: center;
+  color: #fff;
   padding: 0 2%;
   font-size: 36px;
 }
 
 .home__text h1 {
-  font-size: 48px;
-  margin: 0;
+  font-size: 3rem;
 }
 
 .home__text p {
-  font-size: 24px;
+  font-size: 1.7rem;
   margin: 20px 0;
 }
 
 .home__button {
   background-color: #0b2447;
   color: #fff;
-  padding: 10px 20px;
+  padding: 2% 3%;
   border: none;
   border-radius: 50%;
   margin: 0 5%;
@@ -42,7 +40,7 @@
 
 .home__button_text {
   padding: 10px 20px;
-  font-size: 22px;
+  font-size: 1.5em;
   font-weight: bold;
   border: none;
   border-radius: 50%;
