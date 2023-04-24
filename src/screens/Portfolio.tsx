@@ -14,14 +14,26 @@ function Portfolio() {
     <div className="portfolio-container">
       <div className="portfolio-mob-container">
         <div className="portfolio-mob-text-container">
+          <h3>
+            A React Native Password App that aims to provide a secure and
+            user-friendly solution for generating and storing passwords.
+          </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            enim voluptatem distinctio commodi, delectus assumenda, provident,
-            odit veritatis quidem labore error adipisci? Laborum, id. Corporis,
-            esse eum possimus accusamus earum illum, harum exercitationem
-            quisquam beatae enim quas maiores ratione qui excepturi! Animi,
-            quasi quas beatae molestias modi corporis? Corrupti, quam?
+            The app offers full CRUD (Create, Read, Update, Delete)
+            functionality with an authenticated login process to ensure the
+            user's privacy and security. It uses Realm for local database
+            storage, which ensures that the user's sensitive information is
+            encrypted in local storage. The app intentionally does not sync data
+            to cloud storage.
           </p>
+          <ul>
+            Features
+            <li>Local database storage with Realm</li>
+            <li>Authenticated Login</li>
+            <li>Full CRUD functionality</li>
+            <li>Customization of generated passwords</li>
+            <li>Styling is still a work in progress</li>
+          </ul>
         </div>
         <div className="portfolio-mob-carousel">
           <Carousel>{mobImages}</Carousel>

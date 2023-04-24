@@ -1,7 +1,8 @@
 import PersonIcon from "@mui/icons-material/Person";
 import { useState } from "react";
 
-import profileImage from "../assets/images/person.jpg";
+// import profileImage from "../assets/images/person.jpg";
+import profileImage from "../assets/images/profile.jpg";
 import AboutMeContent from "../components/AboutMeContent";
 import BasicModal from "../components/Modal";
 
