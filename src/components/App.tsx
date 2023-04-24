@@ -26,6 +26,7 @@ function App() {
         setNavColor("#FF6969");
         break;
       default:
+        setNavColor("#009FBD");
         break;
     }
   }, [location]);
@@ -68,8 +69,9 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );
