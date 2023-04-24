@@ -44,13 +44,31 @@ function Portfolio() {
           <Carousel>{webImages}</Carousel>
         </div>
         <div className="portfolio-web-text-container">
+          <h3>MERN Stack Investing App</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae sint
-            omnis velit dolor excepturi porro placeat dicta. Fuga deserunt
-            impedit accusantium quos nesciunt, minima eos repellendus, veniam
-            pariatur dolorum voluptas, assumenda blanditiis. In impedit
-            voluptatem rem maxime aliquam accusamus ipsam cupiditate praesentium
-            minus reiciendis non possimus quos, provident ducimus odio!
+            This project solves the challenge of processing and analyzing large
+            amounts of financial data quickly and efficiently. It uses an
+            Express back-end with user authentication and a third-party API to
+            fetch and process historical financial data, which is then stored in
+            MongoDB for easy access and analysis. The back-end stores the raw
+            financial data obtained from the 3rd party API and then uses it
+            (based on mappings) to generate several analysis documents that
+            include metrics for assessing profitability, value, liquidity, and
+            more. This approach ensures that the data is not only easily
+            accessible, but also organized and presented in a meaningful way to
+            users. A key benefit to this structure is that at some future date,
+            different sources for financial data could be used, and only the
+            internal mappings would need to be updated. This feature makes the
+            project flexible and adaptable to changing conditions, ensuring that
+            the users always have access to accurate and relevant financial
+            data.
+          </p>
+          <p>
+            The React front-end features intuitive interfaces and responsive
+            design, making it easy for users to navigate and analyze complex
+            financial data. With search and sort capabilities on the data
+            tables, users can quickly find the information they need to make
+            informed investment decisions.
           </p>
         </div>
       </div>
