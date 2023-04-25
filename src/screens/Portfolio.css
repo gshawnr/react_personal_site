@@ -79,7 +79,8 @@ li {
   .portfolio-mob-carousel,
   .portfolio-web-carousel,
   .portfolio-web-text-container {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
