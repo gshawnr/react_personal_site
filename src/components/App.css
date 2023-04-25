@@ -1,6 +1,7 @@
 .App {
   background-color: #009fbd;
   text-align: center;
+  min-width: 375px;
 }
 .app-nav {
   padding: 10px 20px 0;

@@ -1,33 +1,34 @@
 .home {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   padding: 0 20px;
 }
 
-.home__main {
+.home-main {
   display: flex;
   padding: 0 15%;
   margin-top: 8%;
 }
 
-.home__text {
+.home-text {
   flex: 1;
   color: #fff;
   padding: 0 2%;
   font-size: 36px;
 }
 
-.home__text h1 {
+.home-text h1 {
   font-size: 3rem;
 }
 
-.home__text p {
+.home-text p {
   font-size: 1.7rem;
   margin: 20px 0;
+  overflow-y: auto;
 }
 
-.home__button {
+.home-button {
   background-color: #0b2447;
   color: #fff;
   padding: 2% 3%;
@@ -38,7 +39,7 @@
   white-space: nowrap;
 }
 
-.home__button_text {
+.home-button-text {
   padding: 10px 20px;
   font-size: 1.5em;
   font-weight: bold;
@@ -48,14 +49,29 @@
   white-space: nowrap;
 }
 
-.home__button:hover {
+.home-button:hover {
   background-color: #fff;
   color: #0b2447;
 }
 
-.home__image {
+.home-image {
   border-radius: 50%;
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+  .home-main {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .image-container {
+    display: none;
+  }
+  .home-text {
+    margin-top: 45%;
+  }
 }
