@@ -42,3 +42,21 @@ h1 {
   margin: 5% auto 0;
   width: 30%;
 }
+
+@media screen and (max-width: 1200px) {
+  .contact-form-control {
+    width: 70%;
+  }
+  .contact-container {
+    padding-top: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form-control {
+    width: 90%;
+  }
+  .contact-container {
+    padding-top: 40%;
+  }
+}
