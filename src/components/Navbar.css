@@ -2,7 +2,6 @@
   display: none;
   position: absolute;
   top: 99%;
-  left: -1;
   width: 99%;
   overflow: hidden;
 }
@@ -10,7 +9,7 @@
 .nav__menu-items a {
   display: block;
   color: #fff;
-  font-size: 19px;
+  font-size: 1.5em;
   font-weight: bold;
   padding: 14px 5px;
   transition: all 0.2s ease-in-out;

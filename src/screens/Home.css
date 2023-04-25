@@ -1,38 +1,36 @@
 .home {
-  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 0 20px;
 }
 
-.home__main {
+.home-main {
   display: flex;
   padding: 0 15%;
+  margin-top: 8%;
 }
 
-.home__text {
+.home-text {
   flex: 1;
   color: #fff;
-  text-align: center;
   padding: 0 2%;
   font-size: 36px;
 }
 
-.home__text h1 {
-  font-size: 48px;
-  margin: 0;
+.home-text h1 {
+  font-size: 3rem;
 }
 
-.home__text p {
-  font-size: 24px;
+.home-text p {
+  font-size: 1.7rem;
   margin: 20px 0;
+  overflow-y: auto;
 }
 
-.home__button {
-  padding: 10px 20px;
-  font-size: 22px;
-  font-weight: bold;
+.home-button {
+  background-color: #0b2447;
+  color: #fff;
+  padding: 2% 3%;
   border: none;
   border-radius: 50%;
   margin: 0 5%;
@@ -40,9 +38,39 @@
   white-space: nowrap;
 }
 
-.home__image {
+.home-button-text {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.home-button:hover {
+  background-color: #fff;
+  color: #0b2447;
+}
+
+.home-image {
   border-radius: 50%;
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1030px) {
+  .home-main {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .image-container {
+    display: none;
+  }
+  .home-text {
+    margin-top: 45%;
+  }
 }

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Button } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LanguageIcon from "@mui/icons-material/Language";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import SendIcon from "@mui/icons-material/Send";
+import { Button, TextField } from "@mui/material";
+import { useState } from "react";
+
 import { sendMessage } from "../apis/aws";
+import ContactModalContent from "../components/ContactModalContent";
 import Modal from "../components/Modal";
+
 import "./Contact.css";
 
 type InputEvent = {
@@ -14,10 +17,23 @@ type InputEvent = {
   };
 };
 
+const INPUT_FONT_SIZE = "1.4rem";
+
 const Contact = () => {
   const [name, setName] = useState("");
+  const [nameError, setNameError] = useState(false);
+  const [nameErrorMsg, setNameErrorMsg] = useState("");
+  const [resMsgName, setResMsgName] = useState("");
+
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+
   const [message, setMessage] = useState("");
+  const [msgError, setMsgError] = useState(false);
+  const [msgErrorMsg, setMsgErrorMsg] = useState("");
+
+  const [modalState, setModalState] = useState(false);
 
   const handleNameChange = (e: InputEvent) => {
     setName(e.target.value);
@@ -33,8 +49,9 @@ const Contact = () => {
 
   const handleSubmit = async () => {
     try {
-      // TODO add validation
-      const data = { name, email, message };
+      if (!validateInputs()) {
+        return;
+      }
 
       // spacing added for message readability
       const formattedMsg = `
@@ -44,6 +61,8 @@ const Contact = () => {
 
       await sendMessage(formattedMsg, name);
 
+      setResMsgName(name);
+      setModalState(true);
       clearInputs();
     } catch (err) {
       console.log("contact error: handleSubmit err", err);
@@ -56,59 +75,124 @@ const Contact = () => {
     setMessage("");
   };
 
+  const validateInputs = (): boolean => {
+    let result = true;
+
+    //name regex
+    const nameRegex = /^(?!.*['"])[a-zA-Z0-9\s]+$/gm;
+    if (!nameRegex.test(name)) {
+      setNameError(true);
+      setNameErrorMsg(
+        "Name must be provided. Note some special characters are restricted."
+      );
+      result = false;
+    }
+
+    //email regex
+    const emailRegex = /^(?!.*['"])[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/g;
+    if (!emailRegex.test(email)) {
+      setEmailError(true);
+      setEmailErrorMsg("Email is invalid.  Please try again.");
+      result = false;
+    }
+
+    //msg regex
+    const msgRegex = /^.{1,}[a-zA-Z0-9.-_*(),\\n\s]+$/gm;
+    if (!msgRegex.test(message)) {
+      setMsgError(true);
+      setMsgErrorMsg("Message must be provided.  Please try again.");
+      result = false;
+    }
+
+    return result;
+  };
+
   return (
     <div className="contact-container">
-      <form className="contact-form">
-        <div className="contact form-control">
-          <label className="contact">Name</label>
-          <input
-            className="contact"
-            name="name"
-            onChange={handleNameChange}
-            required
+      <h1 className="contact-heading">Contact Me</h1>
+      <div className="contact-form-control">
+        <div className="contact-form-group">
+          <TextField
+            autoFocus
+            className="contact-input"
+            error={nameError}
+            fullWidth
+            helperText={nameErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            label="name"
+            onChange={(e) => {
+              setNameError(false);
+              setNameErrorMsg("");
+              handleNameChange(e);
+            }}
+            required={true}
             type="text"
             value={name}
+            variant="standard"
           />
         </div>
-        <div className="contact form-control">
-          <label className="contact">Email</label>
-          <input
-            className="contact"
+        <div className="contact-form-group">
+          <TextField
+            className="contact-input"
+            error={emailError}
+            fullWidth
+            helperText={emailErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            label="email"
+            onChange={(e) => {
+              setEmailError(false);
+              setEmailErrorMsg("");
+              handleEmailChange(e);
+            }}
+            required
             type="email"
-            name="email"
             value={email}
-            onChange={handleEmailChange}
+            variant="standard"
           />
         </div>
-        <div className="contact form-control">
-          <label className="contact" id="message">
-            Message
-          </label>
-          <textarea
-            className="contact"
-            id="message"
-            name="message"
-            rows={12}
+        <div className="contact-form-group">
+          <TextField
+            className="contact-input"
+            error={msgError}
+            fullWidth
+            helperText={msgErrorMsg}
+            InputProps={{ style: { fontSize: INPUT_FONT_SIZE } }}
+            InputLabelProps={{
+              style: { fontSize: INPUT_FONT_SIZE },
+            }}
+            label="message"
+            multiline
+            onChange={(e) => {
+              setMsgError(false);
+              setMsgErrorMsg("");
+              handleMessageChange(e);
+            }}
+            required
+            rows={6}
             value={message}
-            onChange={handleMessageChange}
+            variant="outlined"
           />
         </div>
-        <div className="contact send-btn">
+        <div className="contact-btn-group">
           <Button
+            className="contact-send-btn"
             endIcon={<SendIcon />}
             fullWidth
             sx={{
-              width: "20%",
-              backgroundColor: "#0b2447",
+              backgroundColor: "#ff6969",
               color: "#fcffe7",
+              width: "35%",
             }}
             onClick={handleSubmit}
+            type="submit"
             variant="contained"
           >
             Send
           </Button>
         </div>
-      </form>
+      </div>
       <div className="contact-social">
         <div>
           <a href="https://github.com/gshawnr">
@@ -126,6 +210,11 @@ const Contact = () => {
           </a>
         </div>
       </div>
+      <Modal
+        modalState={modalState}
+        changeModalState={setModalState}
+        modalBody={<ContactModalContent data={resMsgName} />}
+      />
     </div>
   );
 };

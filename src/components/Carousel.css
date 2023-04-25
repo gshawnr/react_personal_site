@@ -1,0 +1,37 @@
+.CarouselItem {
+  flex: 0 0 auto;
+  width: 99%;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.CarouselContainer {
+  padding: 0 5%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.CarouselContainer:hover .LeftCarouselButton {
+  transform: translate(0%, -50%);
+}
+
+.CarouselContainer:hover .RightCarouselButton {
+  transform: translate(0%, -50%);
+}
+
+.CarouselContainerInner {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.CarouselContainerInner::-webkit-scrollbar {
+  display: none;
+}
+
+.CarouselContainerInner .CarouselItem {
+  scroll-snap-align: center;
+}

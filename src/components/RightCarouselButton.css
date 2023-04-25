@@ -1,0 +1,14 @@
+.RightCarouselButton {
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  /* transform: translate(100%, -50%); // use for hidden */
+  transform: translate(0%, -50%);
+  transition: transform 0.1s ease-in-out;
+  z-index: 1;
+}
