@@ -40,7 +40,7 @@ function Portfolio() {
         </div>
       </div>
       <div className="portfolio-web-container">
-        <div className="portfolio-carousel-web">
+        <div className="portfolio-web-carousel">
           <Carousel>{webImages}</Carousel>
         </div>
         <div className="portfolio-web-text-container">

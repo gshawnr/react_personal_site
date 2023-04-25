@@ -42,13 +42,14 @@ li {
   margin: 0% auto;
   padding: 4% 1%;
   width: 35%;
+  height: 100%;
 }
 
 .portfolio-web-container {
   padding: 4% 1%;
 }
 
-.portfolio-carousel-web {
+.portfolio-web-carousel {
   background-color: #98d8aa;
   border-radius: 2%;
   display: flex;
@@ -68,4 +69,32 @@ li {
 .portfolio-image-web {
   width: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1325px) {
+  .portfolio-mob-container {
+    display: block;
+  }
+
+  .portfolio-mob-carousel,
+  .portfolio-web-carousel,
+  .portfolio-web-text-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .portfolio-mob-carousel,
+  .portfolio-web-carousel {
+    display: none;
+  }
+
+  .portfolio-mob-text-container {
+    margin: 1% auto;
+    padding: 1%;
+  }
+
+  .portfolio-container {
+    padding-top: 25%;
+  }
 }
