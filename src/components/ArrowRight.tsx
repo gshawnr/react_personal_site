@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ArrowRight = ({ color = "#000" }) => (
+export const ArrowRight = ({ color = "#fff" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="35"

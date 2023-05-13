@@ -85,7 +85,14 @@ li {
 }
 
 @media screen and (max-width: 725px) {
-  .portfolio-mob-carousel,
+  .portfolio-mob-carousel {
+    background-color: #f7d060;
+  }
+
+  .portfolio-image-mob {
+    width: 100%;
+  }
+
   .portfolio-web-carousel {
     display: none;
   }

@@ -67,10 +67,8 @@
 }
 
 @media screen and (max-width: 675px) {
-  .image-container {
-    display: none;
-  }
-  .home-text {
-    margin-top: 45%;
+  .home-image {
+    width: 200px;
+    height: 200px;
   }
 }

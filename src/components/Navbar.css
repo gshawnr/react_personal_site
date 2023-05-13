@@ -27,3 +27,12 @@
     padding: 7px;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .nav__menu-items {
+    position: inherit;
+  }
+  .nav__menu-items a {
+    text-align: start;
+  }
+}
