@@ -18,8 +18,9 @@ li {
   margin-left: 20%;
 }
 
-.portfolio-container {
+.portfolio {
   background-color: #f7d060;
+  min-height: 100vh;
   padding: 0 5%;
   width: 100vw;
 }
@@ -100,9 +101,5 @@ li {
   .portfolio-mob-text-container {
     margin: 1% auto;
     padding: 1%;
-  }
-
-  .portfolio-container {
-    padding-top: 25%;
   }
 }

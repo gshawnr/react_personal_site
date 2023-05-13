@@ -1,12 +1,15 @@
 .home {
+  background-color: #009fbd;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  min-height: 100vh;
 }
 
 .home-main {
   display: flex;
-  padding: 0 15%;
+  /* padding: 0 15%; */
+  padding: 0 10px 0px 200px;
   margin-top: 8%;
 }
 
@@ -27,6 +30,11 @@
   overflow-y: auto;
 }
 
+.home-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .home-button {
   background-color: #0b2447;
   color: #fff;
@@ -60,15 +68,17 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 1030px) {
-  .home-main {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 1150px) {
   .home-image {
     width: 200px;
     height: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-main {
+    display: block;
+    margin-top: 0;
+    padding: 10%;
   }
 }

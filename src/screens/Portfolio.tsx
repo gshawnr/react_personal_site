@@ -11,7 +11,7 @@ function Portfolio() {
   const webImages = createImagesArr(webImageStrs, "portfolio-image-web");
 
   return (
-    <div className="portfolio-container">
+    <div className="portfolio">
       <div className="portfolio-mob-container">
         <div className="portfolio-mob-text-container">
           <h3>

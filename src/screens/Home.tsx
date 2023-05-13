@@ -24,10 +24,14 @@ const Home = () => {
             is on building beautiful mobile and web applications using React and
             React Native.
           </p>
-          <button className="home-button" onClick={() => setModalState(true)}>
-            <PersonIcon sx={{ verticalAlign: "middle", paddingRight: "3%" }} />
-            <span className="home-button-text">ABOUT ME</span>
-          </button>
+          <div className="home-btn-container">
+            <button className="home-button" onClick={() => setModalState(true)}>
+              <PersonIcon
+                sx={{ verticalAlign: "middle", paddingRight: "3%" }}
+              />
+              <span className="home-button-text">ABOUT ME</span>
+            </button>
+          </div>
           <Modal
             changeModalState={setModalState}
             modalBody={<AboutMeContent />}
