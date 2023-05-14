@@ -24,7 +24,7 @@ const Navbar = ({ linkColor }: NavbarProps) => {
           </div>
         </div>
       </div>
-      <div className="nav-menu-items">
+      <div className="nav-menu-items" style={{ backgroundColor: linkColor }}>
         <Link style={{ backgroundColor: linkColor }} to="/">
           HOME
         </Link>

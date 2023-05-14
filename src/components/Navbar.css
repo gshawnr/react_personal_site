@@ -61,7 +61,6 @@
 .nav-menu-active + .nav-menu-items {
   display: block;
   margin-top: 15px;
-  transition: all 0.2s ease-in-out;
 }
 
 .nav-menu-items {
@@ -87,14 +86,12 @@
 }
 
 @media screen and (max-width: 900px) {
-  .nav-menu-active {
-    height: 50vh;
-  }
-
   .nav-menu-items {
+    height: 100vh;
     width: 100%;
     left: 0;
     right: 0;
+    z-index: 100;
   }
 
   .nav-menu-items a {
