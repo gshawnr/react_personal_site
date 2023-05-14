@@ -8,7 +8,7 @@ type NavbarProps = {
 };
 
 const Navbar = ({ linkColor }: NavbarProps) => {
-  const [menuActive, setMenuActive] = useState(true);
+  const [menuActive, setMenuActive] = useState(false);
 
   return (
     <div className="nav" style={{ backgroundColor: linkColor }}>
