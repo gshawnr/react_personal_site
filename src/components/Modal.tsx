@@ -1,6 +1,8 @@
 import { Box, Paper } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
+import "./Modal.css";
+
 type ModalProps = {
   modalState: boolean;
   changeModalState: (state: boolean) => void;
@@ -13,7 +15,7 @@ export default function BasicModal({
   modalState,
 }: ModalProps) {
   return (
-    <div>
+    <div className="modal-container">
       <Modal
         open={modalState}
         onClose={() => changeModalState(false)}
@@ -34,7 +36,7 @@ const style = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "60%",
+    width: "80%",
     height: "80%",
     bgcolor: "background.paper",
     border: "2px thin #0b2447",

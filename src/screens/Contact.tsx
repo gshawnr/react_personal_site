@@ -108,7 +108,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact">
       <h1 className="contact-heading">Contact Me</h1>
       <div className="contact-form-control">
         <div className="contact-form-group">

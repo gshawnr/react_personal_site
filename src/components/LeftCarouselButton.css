@@ -1,6 +1,7 @@
 .LeftCarouselButton {
-  background: transparent;
-  border-radius: 15px;
+  background-color: #000;
+  opacity: 0.7;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   left: 0;

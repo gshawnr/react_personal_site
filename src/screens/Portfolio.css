@@ -18,8 +18,9 @@ li {
   margin-left: 20%;
 }
 
-.portfolio-container {
+.portfolio {
   background-color: #f7d060;
+  min-height: 100vh;
   padding: 0 5%;
   width: 100vw;
 }
@@ -63,7 +64,7 @@ li {
 }
 
 .portfolio-image-mob {
-  width: 45%;
+  width: 55%;
 }
 
 .portfolio-image-web {
@@ -71,7 +72,13 @@ li {
   object-fit: cover;
 }
 
-@media screen and (max-width: 1325px) {
+.portfolio-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
   .portfolio-mob-container {
     display: block;
   }
@@ -85,17 +92,7 @@ li {
 }
 
 @media screen and (max-width: 725px) {
-  .portfolio-mob-carousel,
   .portfolio-web-carousel {
     display: none;
-  }
-
-  .portfolio-mob-text-container {
-    margin: 1% auto;
-    padding: 1%;
-  }
-
-  .portfolio-container {
-    padding-top: 25%;
   }
 }
