@@ -2,7 +2,9 @@
   background-color: grey;
   padding-top: 2%;
 }
+
 .nav-menu-hidden {
+  height: 100%;
 }
 
 .nav-menu-icon-container {
@@ -30,7 +32,7 @@
   background-color: #fff;
   position: absolute;
   left: -1;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
 .nav-menu-icon span:nth-child(1) {
@@ -60,14 +62,12 @@
 
 .nav-menu-active + .nav-menu-items {
   display: block;
-  margin-top: 15px;
 }
 
 .nav-menu-items {
   display: none;
   position: absolute;
   width: 150px;
-  top: 130px;
   left: 50px;
 }
 

@@ -1,6 +1,7 @@
 h1 {
   font-size: 3rem;
   margin-top: 0;
+  text-align: center;
 }
 
 .contact-btn-group {
@@ -21,10 +22,7 @@ h1 {
   background-color: white;
   border-radius: 5%;
   margin: 3% auto;
-
   padding: 2% 1%;
-  min-width: 400px;
-  /* width: 40%; */
   width: 500px;
 }
 
@@ -45,40 +43,8 @@ h1 {
   width: 30%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 550px) {
   .contact-form-control {
-    /* padding: 2% 0; */
-    /* width: 70%; */
-    /* width: 500px; */
-  }
-
-  .contact-form-group {
-    /* width: 90%; */
-  }
-}
-
-@media screen and (max-width: 870px) {
-  .contact {
-    padding-top: 22%;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  .contact-heading {
-    display: none;
-  }
-  .contact-form-control {
-    /* width: 100%; */
-    /* padding-top: 15%; */
-  }
-  .contact {
-    /* padding-top: 20%; */
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .contact-form-control {
-    width: 100%;
-    /* padding-top: 15%; */
+    width: 90%;
   }
 }

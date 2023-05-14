@@ -40,11 +40,11 @@ function Portfolio() {
         </div>
       </div>
       <div className="portfolio-web-container">
+        <h3>MERN Stack Investing App</h3>
         <div className="portfolio-web-carousel">
           <Carousel>{webImages}</Carousel>
         </div>
         <div className="portfolio-web-text-container">
-          <h3>MERN Stack Investing App</h3>
           <p>
             This project solves the challenge of processing and analyzing large
             amounts of financial data quickly and efficiently. It uses an
@@ -83,7 +83,7 @@ function createImagesArr(
   return imageStrings.map((image, index) => {
     return (
       <div key={index}>
-        <div>
+        <div className="portfolio-image-container">
           <img className={classname} src={image} />
         </div>
       </div>

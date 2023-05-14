@@ -25,13 +25,25 @@ const Navbar = ({ linkColor }: NavbarProps) => {
         </div>
       </div>
       <div className="nav-menu-items" style={{ backgroundColor: linkColor }}>
-        <Link style={{ backgroundColor: linkColor }} to="/">
+        <Link
+          style={{ backgroundColor: linkColor }}
+          to="/"
+          onClick={() => setMenuActive(!menuActive)}
+        >
           HOME
         </Link>
-        <Link style={{ backgroundColor: linkColor }} to="/portfolio">
+        <Link
+          style={{ backgroundColor: linkColor }}
+          to="/portfolio"
+          onClick={() => setMenuActive(!menuActive)}
+        >
           PORTFOLIO
         </Link>
-        <Link style={{ backgroundColor: linkColor }} to="/contact">
+        <Link
+          style={{ backgroundColor: linkColor }}
+          to="/contact"
+          onClick={() => setMenuActive(!menuActive)}
+        >
           CONTACT
         </Link>
       </div>
